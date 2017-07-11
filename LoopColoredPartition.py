@@ -59,6 +59,7 @@ def partitions_from_profile_max_size(profile, max_weight, num_parts, kwargs):
     return partitions
 
 
+
 # Options are thus:
 # unique_parts = True generates only partitions with distinct parts.
 # 12/21/2/1 is generated under this condition.
