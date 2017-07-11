@@ -30,5 +30,3 @@ def get_necklaces(num_colors,size):
 
 def get_bracelets(num_colors, size):
     return [x for x in get_profiles(num_colors,size) if is_bracelet(x)]
-
-print get_bracelets(3,5)
