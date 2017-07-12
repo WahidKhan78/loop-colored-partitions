@@ -32,6 +32,8 @@ def dominates(l1, l2):
 
 def partitions_from_profile_max_size(profile, max_weight, num_parts, kwargs):
     partitions = []
+    if any(p < 0 for p in profile):
+        return partitions
     if all(p == 0 for p in profile):
         if 'num_parts_list' in kwargs:
             if num_parts in kwargs['num_parts_list']:
@@ -77,3 +79,6 @@ def partitions_from_profile(profile, **kwargs):
             kwargs):
         lst.append(loop_colored_partition(reversed(p), len(profile)))
     return lst
+
+def partitions_with_fixed_parts(profile, k):
+    return partitions_from_profile(profile, num_parts_list = [k])
